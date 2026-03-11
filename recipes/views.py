@@ -10,3 +10,11 @@ def about_view(request):
 
 def recipes_view(request):
     return render(request, 'recipes/recipes.html')
+
+
+def login_view(request):
+    return render(request, 'recipes/login.html')
+
+
+def signup_view(request):
+    return render(request, 'recipes/signup.html')
