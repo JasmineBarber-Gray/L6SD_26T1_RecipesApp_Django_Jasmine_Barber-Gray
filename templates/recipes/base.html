@@ -17,14 +17,13 @@
             <li><a href="{% url 'Home' %}">Home</a></li>
             
             <div class="dropdown">
-            <button class="dropbtn"><a href="{% url 'Recipes' %}">Recipes</a></button>
-            
-            <ul>
-                <li><a href="#breakfast">Breakfast</a></li>
-                <li><a href="#lunch">Lunch</a></li>
-                <li><a href="#dinner">Dinner</a></li>
-            </ul>
-            </li>
+                <button class="dropbtn"><a href="{% url 'Recipes' %}">Recipes</a></button>
+                <ul class="dropdown-content">
+                    <li><a href="#breakfast">Breakfast</a></li>
+                    <li><a href="#lunch">Lunch</a></li>
+                    <li><a href="#dinner">Dinner</a></li>
+                </ul>
+            </div>
 
             <li><a href="">Healthy Eating</a></li>
             <li><a href="">Holidays</a></li>
