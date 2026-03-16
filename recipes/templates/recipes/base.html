@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Chronicles</title>
     <link rel="stylesheet" type="text/css" href="{% static 'recipes/style.css' %}">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 </head>
 
 <body>
@@ -18,13 +20,19 @@
     <h1>Kitchen Chronicles</h1>
 </header>
 
+<!-- Navigation Bar -->
     <nav class="navbar">
         <ul class="nav-links">
             <li><a href="{% url 'Home' %}">Home</a></li>
             <li><a href="{% url 'About' %}">About</a></li>
             
+            <!--Daily Recipes Dropdown button-->
             <li class="dropdown">
-                <button class="dropbtn"><a href="{% url 'Recipes' %}">Recipes ▼</a></button>
+                <button class="dropbtn">
+                    <a href="{% url 'Recipes' %}">Recipes 
+                        <i class="fi fi-rr-angle-small-down"></i>
+                    </a>
+                </button>
                 <ul class="dropdown-content">
                     <li><a href="{% url 'Recipes' %}#breakfast">All Recipes</a></li>
                     <li><a href="{% url 'Recipes' %}#breakfast">Breakfast</a></li>
@@ -32,9 +40,14 @@
                     <li><a href="{% url 'Recipes' %}#dinner">Dinner</a></li>
                 </ul>
             </li>
-            
+
+            <!--Health & Diet Dropdown button-->
             <li class="dropdown">
-                <button class="dropbtn"><a href="">Health & Diet ▼</a></button>
+                <button class="dropbtn">
+                    <a href="">Health & Diet 
+                        <i class="fi fi-rr-angle-small-down"></i>
+                    </a>
+                </button>
                 <ul class="dropdown-content">
                     <li><a href="#kitchen">Keto</a></li>
                     <li><a href="#techniques">Vegan</a></li>
@@ -43,9 +56,14 @@
                     <li><a href="#safety">Calorie Deficit</a></li>
                 </ul>
             </li>
-
+            
+            <!--Holiday Dropdown button-->
             <li class="dropdown">
-                <button class="dropbtn"><a href="">Holiday ▼</a></button>
+                <button class="dropbtn">
+                    <a href="">Holiday 
+                        <i class="fi fi-rr-angle-small-down"></i>
+                    </a>
+                </button>
                 <ul class="dropdown-content">
                     <li><a href="#kitchen">Valentine's Day</a></li>
                     <li><a href="#techniques">Easter</a></li>
@@ -56,14 +74,71 @@
             </li>
         </ul>
 
+        <!-- Search Bar -->
         <div class="search-container">
             <input type="text" placeholder="Search recipes...">
-            <button type="submit">🔎︎</button>
+            <button type="submit">
+                <i class="fi fi-rr-search"></i>
+            </button>
         </div>
 
     </nav>
 
+    <!-- Main Content Area -->
     {% block content %}{% endblock %}
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Social Media Section -->
+             <div class="footer-social">
+                <h3>Follow Us</h3>
+                
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fi fi-brands-facebook"></i>
+                    </a>
+                    
+                    <a href="https://instagram.com" target="_blank">
+                        <i class="fi fi-brands-instagram"></i>
+                    </a>
+                    
+                    <a href="mailto:your@email.com">
+                        <i class="fi fi-rr-envelope"></i>
+                    </a>
+                    
+                    <a href="https://twitter.com" target="_blank">
+                        <i class="fi fi-brands-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Developer Info -->
+             <div class="footer-dev">
+                <h3>Developed by: Jasmine Barber-Gray</h3>
+
+                <div class="dev-icons">
+                    
+                    <a href="mailto:jay.barbergray@gmail.com">
+                        <i class="fi fi-rr-envelope"></i>
+                    </a>
+                    
+                    <a href="https://github.com/JasmineBarber-Gray" target="_blank">
+                        <i class="fi fi-brands-github"></i>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/jasmine-barber-gray-687098379/" target="_blank">
+                        <i class="fi fi-brands-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Kitchen Chronicles | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
