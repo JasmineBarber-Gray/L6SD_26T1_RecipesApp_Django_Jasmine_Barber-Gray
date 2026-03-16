@@ -31,6 +31,11 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.top-bar span {
+  color: #d9ccc1 !important;
+  margin-right: 1rem;
+}
+
 .top-bar a {
   text-decoration: none;
   color: #d9ccc1;
@@ -65,6 +70,7 @@ header {
 /* Nav links container */
 .nav-links {
   display: flex;
+  justify-content: space-between;
   list-style: none;
   gap: 1rem;
   align-items: center;
@@ -87,6 +93,28 @@ header {
   color: #ff6347;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
 
 /* Dropdown styling */

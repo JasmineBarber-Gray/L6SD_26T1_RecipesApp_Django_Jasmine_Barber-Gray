@@ -5,11 +5,6 @@ from django.shortcuts import render, get_object_or_404
 def home_view(request):
     return render(request, 'recipes/home.html')
 
-
-def about_view(request):
-    return render(request, 'recipes/about.html')
-
-
 def recipes_view(request):
     recipes = Recipe.objects.all()
     return render(request, 'recipes/recipes.html', {'recipes': recipes})
