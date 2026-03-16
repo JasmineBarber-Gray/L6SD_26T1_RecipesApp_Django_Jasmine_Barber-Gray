@@ -13,7 +13,14 @@
 <body>
 
 <div class="top-bar">
-    <a href="{% url 'Login' %}">Login</a> | <a href="{% url 'Signup' %}">Signup</a>
+    {% if user.is_authenticated %}
+        <span>Welcome, {{ user.username }}!</span>
+        <a href="{% url 'Logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'Login' %}">Login</a> |
+    <a href="{% url 'Signup' %}">Signup</a>
+    {% endif %}
+
 </div>
 
 <header>
@@ -34,10 +41,11 @@
                     </a>
                 </button>
                 <ul class="dropdown-content">
-                    <li><a href="{% url 'Recipes' %}#breakfast">All Recipes</a></li>
-                    <li><a href="{% url 'Recipes' %}#breakfast">Breakfast</a></li>
-                    <li><a href="{% url 'Recipes' %}#lunch">Lunch</a></li>
-                    <li><a href="{% url 'Recipes' %}#dinner">Dinner</a></li>
+                    <li><a href="{% url 'category_recipes' 'All Recipes' %}">All Recipes</a></li>
+                    <li><a href="{% url 'category_recipes' 'Breakfast' %}">Breakfast</a></li>
+                    <li><a href="{% url 'category_recipes' 'Lunch' %}">Lunch</a></li>
+                    <li><a href="{% url 'category_recipes' 'Dinner' %}">Dinner</a></li>
+                    <li><a href="{% url 'category_recipes' 'Dessert' %}">Dessert</a></li>
                 </ul>
             </li>
 
@@ -49,11 +57,11 @@
                     </a>
                 </button>
                 <ul class="dropdown-content">
-                    <li><a href="#kitchen">Keto</a></li>
-                    <li><a href="#techniques">Vegan</a></li>
-                    <li><a href="#ingredients">Vegetarian</a></li>
-                    <li><a href="#mealprep">Protein</a></li>
-                    <li><a href="#safety">Calorie Deficit</a></li>
+                    <li><a href="{% url 'category_recipes' 'Keto' %}">Keto</a></li>
+                    <li><a href="{% url 'category_recipes' 'Vegan' %}">Vegan</a></li>
+                    <li><a href="{% url 'category_recipes' 'Vegetarian' %}">Vegetarian</a></li>
+                    <li><a href="{% url 'category_recipes' 'Protein' %}">Protein</a></li>
+                    <li><a href="{% url 'category_recipes' 'Calorie Deficit' %}">Calorie Deficit</a></li>
                 </ul>
             </li>
             
@@ -65,11 +73,12 @@
                     </a>
                 </button>
                 <ul class="dropdown-content">
-                    <li><a href="#kitchen">Valentine's Day</a></li>
-                    <li><a href="#techniques">Easter</a></li>
-                    <li><a href="#ingredients">Halloween</a></li>
-                    <li><a href="#mealprep">Christmas</a></li>
-                    <li><a href="#safety">New Years</a></li>
+                    <li><a href="{% url 'category_recipes' 'Valentine\s Day' %}"> Valentine's Day</a></li>
+                    <li><a href="{% url 'category_recipes' 'Easter' %}">Easter</a></li>
+                    <li><a href="{% url 'category_recipes' 'Halloween' %}">Halloween</a></li>
+                    <li><a href="{% url 'category_recipes' 'Thanksgiving' %}">Thanksgiving</a></li>
+                    <li><a href="{% url 'category_recipes' 'Christmas' %}">Christmas</a></li>
+                    <li><a href="{% url 'category_recipes' 'New Years' %}">New Years</a></li>
                 </ul>
             </li>
         </ul>
