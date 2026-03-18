@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 
 # Signup imports
 from django.contrib.auth.forms import UserCreationForm
+from .forms import signupform
 
 # Login imports
 from django.contrib.auth import authenticate, login
@@ -32,14 +33,14 @@ def login_view(request):
 
 def signup_view(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = signupform(request.POST)
 
         if form.is_valid():
-            form.save()
+            user = form.save()
             return redirect('Login')
-
+        
     else:
-        form = UserCreationForm()
+        form = signupform()
 
     return render(request, "users/signup.html", {"form": form})
 

@@ -14,8 +14,12 @@
 
 <div class="top-bar">
     {% if user.is_authenticated %}
-        <span>Welcome, {{ user.username }}!</span>
-        <a href="{% url 'Logout' %}">Logout</a>
+        <span>Welcome, {{ user.username }}!</span> |
+        <a href="{% url 'submit_recipe'%}">Submit a Recipe</a> |
+        <form action="{% url 'Logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
     {% else %}
     <a href="{% url 'Login' %}">Login</a> |
     <a href="{% url 'Signup' %}">Signup</a>
@@ -111,10 +115,6 @@
                         <i class="fi fi-brands-instagram"></i>
                     </a>
                     
-                    <a href="mailto:your@email.com">
-                        <i class="fi fi-rr-envelope"></i>
-                    </a>
-                    
                     <a href="https://twitter.com" target="_blank">
                         <i class="fi fi-brands-twitter"></i>
                     </a>
@@ -123,7 +123,7 @@
             
             <!-- Developer Info -->
              <div class="footer-dev">
-                <h3>Developed by: Jasmine Barber-Gray</h3>
+                <h4>Developed by: Jasmine Barber-Gray</h4>
 
                 <div class="dev-icons">
                     

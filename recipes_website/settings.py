@@ -59,7 +59,7 @@ ROOT_URLCONF = 'recipes_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,4 +119,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+#Added URLs
+
+STATIC_URL = '/static/'
+
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_URL = 'Login'
+
+# Redirect users after login
+LOGIN_REDIRECT_URL = 'Home'  # Use the name of your home URL
+
+# Redirect users after logout
+LOGOUT_REDIRECT_URL = 'Home'

@@ -8,7 +8,7 @@
 
 /*Base*/
 body {
-  background: #bfb473;
+  background: #d9ccc1;
   color: #000000;
   margin: 0;
   padding: 0;
@@ -96,14 +96,16 @@ header {
 }
 
 @media (max-width: 768px) {
+
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .nav-links {
     flex-direction: column;
     width: 100%;
+    gap: 0;
   }
 
   .nav-links li {
@@ -113,7 +115,17 @@ header {
 
   .nav-links li a {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .search-container {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .search-container input {
+    width: 100%;
   }
 }
 
@@ -209,7 +221,6 @@ header {
 }
 
 /*Footer*/
-/* Footer */
 .site-footer {
   background-color: #635333;
   color: #d9ccc1;
@@ -258,7 +269,7 @@ header {
 .social-icons {
   display: flex;
   gap: 25px;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .social-icons a {
@@ -274,23 +285,24 @@ header {
 
 /*Dev footer note*/
 .footer-dev {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .dev-icons {
-    display: flex;
-    gap: 20px;
-    margin-top: 1rem;
+  display: flex;
+  gap: 25px;
+  margin-top: 1rem;
+  justify-content: center;
 }
 
 .dev-icons a {
-    font-size: 28px;
-    color: #2f1a00;
-    transition: transform 0.2s, color 0.2s;
+  font-size: 28px;
+  color: #2f1a00;
+  transition: transform 0.2s, color 0.2s;
 }
 
 .dev-icons a:hover {
-    color: #ff6347;
-    transform: scale(1.2);
+  color: #ff6347;
+  transform: scale(1.2);
 }
