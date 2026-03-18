@@ -30,9 +30,9 @@ def submit_recipe(request):
         form = recipeform(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save(commit=False)
-            recipe.author = request.user   # 🔥 important
+            recipe.author = request.user
             recipe.save()
-            return redirect('Home')
+            return redirect('recipe_detail', id=recipe.id)
     else:
         form = recipeform()
     return render(request, 'recipes/submit_recipe.html', {'form': form})

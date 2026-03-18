@@ -6,7 +6,9 @@
 
 <p>by {{ recipe.author.username }}</p>
 
-<img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+{% if recipe.image %}
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+{% endif %}
 
 <h2>Description</h2>
 <p>{{ recipe.description }}</p>
