@@ -21,8 +21,8 @@
             <button class="logout">Logout</button>
         </form>
     {% else %}
-    <a href="{% url 'Login' %}">Login</a>     |
-    <a href="{% url 'Signup' %}">Signup</a>|
+    <a href="{% url 'Login' %}">Login</a> |
+    <a href="{% url 'Signup' %}">Signup</a> |
     <a href="{% url 'Login'%}">Submit a Recipe</a> 
     {% endif %}
 
@@ -43,7 +43,7 @@
             <!--Daily Recipes Dropdown button-->
             <li class="dropdown">
                 <button class="dropbtn">
-                    <a href="{% url 'Recipes' %}">Recipes 
+                    <a href="{% url 'Recipes' %}">Daily Recipes
                         <i class="fi fi-rr-angle-small-down"></i>
                     </a>
                 </button>
