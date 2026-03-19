@@ -24,7 +24,8 @@ def recipe_detail(request, id):
     return render(request, "recipes/recipe_detail.html", {
         "recipe": recipe
     })
-    
+
+@login_required   
 def submit_recipe(request):
     if request.method == 'POST':
         form = recipeform(request.POST, request.FILES)

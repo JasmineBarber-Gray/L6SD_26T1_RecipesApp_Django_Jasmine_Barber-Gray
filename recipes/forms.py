@@ -6,7 +6,6 @@ class recipeform(forms.ModelForm):
         model = Recipe
         fields = [
             'title', 
-            'author', 
             'category', 
             'image', 
             'description', 

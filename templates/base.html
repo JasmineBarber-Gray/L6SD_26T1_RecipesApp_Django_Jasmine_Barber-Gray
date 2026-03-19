@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'recipes/style.css' %}">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css">
 </head>
 
 <body>
@@ -28,14 +29,17 @@
 
 </div>
 
-<header>
-    <h1>Kitchen Chronicles</h1>
-</header>
-
 <!-- Navigation Bar -->
     <nav class="navbar">
+
+        <!-- Hamburger Menu  -->
+        <a href="Javascript:void(0);" class="menu" onclick="toggleMenu()">
+            <i class="fi fi-rr-menu-burger"></i>
+        </a>
+
         <a href="{% url 'Home' %}" class="logo">
-            <i image =""></i>
+            <i class="fi fi-ss-hat-chef"></i>
+             Kitchen Chronicles
         </a>
         <ul class="nav-links">
             <li><a href="{% url 'Home' %}">Home</a></li>
@@ -43,7 +47,7 @@
             <!--Daily Recipes Dropdown button-->
             <li class="dropdown">
                 <button class="dropbtn">
-                    <a href="{% url 'Recipes' %}">Daily Recipes
+                    <a href="#">Daily Recipes
                         <i class="fi fi-rr-angle-small-down"></i>
                     </a>
                 </button>
@@ -59,7 +63,7 @@
             <!--Health & Diet Dropdown button-->
             <li class="dropdown">
                 <button class="dropbtn">
-                    <a href="">Health & Diet 
+                    <a href="#">Health & Diet 
                         <i class="fi fi-rr-angle-small-down"></i>
                     </a>
                 </button>
@@ -75,7 +79,7 @@
             <!--Holiday Dropdown button-->
             <li class="dropdown">
                 <button class="dropbtn">
-                    <a href="">Holiday 
+                    <a href="#">Holiday 
                         <i class="fi fi-rr-angle-small-down"></i>
                     </a>
                 </button>
@@ -89,11 +93,6 @@
                 </ul>
             </li>
         </ul>
-        
-        <!-- Hamburger Menu  -->
-        <a href="Javascript:void(0);" class="icon" onclick="toggleMenu()">
-            <i class="fi fi-rr-menu-burger"></i>
-        </a>
 
         <!-- Search Bar -->
         <div class="search-container">
@@ -156,6 +155,13 @@
         </div>
     </div>
 </footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.querySelector(".nav-links");
+    nav.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>

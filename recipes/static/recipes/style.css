@@ -59,7 +59,7 @@ body {
 }
 
 /*Header*/
-header {
+.header {
     margin-top: 1rem;
     background: #635333;
     color: rgb(27, 22, 14);
@@ -69,14 +69,23 @@ header {
     box-shadow: none;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    gap: 0.5rem;
+    color: black;
+    list-style: none;
+}
 
 /*Navbar container*/
 .navbar {
+  margin-top: 1.5rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #635333; 
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 1.5rem;
 }
 
 /* Nav links container */
@@ -185,7 +194,7 @@ header {
     margin: 0 auto;
 }
 
-/* login and signup page styling */
+/* login, signup & Recipe submission page styling */
 /*both login and signup are under auth so both use the same container css*/
 .auth-container {
     max-width: 400px;
@@ -195,6 +204,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
+
 }
 
 /*Footer*/
