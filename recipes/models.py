@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+import os
+from django.db.models.signals import pre_save
 
 class Recipe(models.Model):
     
@@ -29,3 +33,23 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+    
+@receiver(post_delete, sender=Recipe)
+def delete_recipe_image(sender, instance, **kwargs):
+    if instance.image:
+        if os.path.isfile(instance.image.path):
+            os.remove(instance.image.path)
+                
+@receiver(pre_save, sender=Recipe)
+def delete_old_image(sender, instance, **kwargs):
+    if not instance.pk:
+        return
+        
+    try:
+        old = Recipe.objects.get(pk=instance.pk)
+    except Recipe.DoesNotExist:
+        return
+            
+    if old.image and old.image != instance.image:
+        if os.path.isfile(old.image.path):
+            os.remove(old.image.path)

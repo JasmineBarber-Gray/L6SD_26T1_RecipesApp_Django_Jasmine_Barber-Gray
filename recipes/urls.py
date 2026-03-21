@@ -9,4 +9,7 @@ urlpatterns = [
     path('category/<str:category>/', views.category_recipes, name='category_recipes'),
     path('recipe/<int:id>/', views.recipe_detail, name='recipe_detail'),
     path('submit/', views.submit_recipe, name='submit_recipe'),
+    path('recipe/<int:id>/edit/', views.edit_recipe, name='edit_recipe'),
+    path('recipe/<int:id>/delete/', views.delete_recipe, name='delete_recipe'),
+    path('search/', views.search_recipes, name='search_recipes'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

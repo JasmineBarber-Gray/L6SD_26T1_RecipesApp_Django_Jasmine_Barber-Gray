@@ -2,21 +2,45 @@
 
 {% block content %}
 
-<h1>{{ recipe.title }}</h1>
-
-<p>by {{ recipe.author.username }}</p>
-
-{% if recipe.image %}
+<div class="recipe-detail-container">
+    
+    <h1>{{ recipe.title }}</h1>
+    <p class="recipe-author">by {{ recipe.author.username }}</p>
+    
+    {% if recipe.image %}
+    
     <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+    
+    {% endif %}
+    
+    <div class="recipe-section">
+        <h2>Description</h2>
+        <p>{{ recipe.description }}</p>
+    </div>
+
+    <div class="recipe-section">
+        <h2>Ingredients</h2>
+        <p>{{ recipe.ingredients }}</p>
+    </div>
+
+    <div class="recipe-section">
+        <h2>Instructions</h2>
+        <p>{{ recipe.instructions }}</p>
+    </div>
+
+{% if user.is_authenticated and user == recipe.author %}
+
+<div class="recipe-buttons">
+    <a href="{% url 'edit_recipe' recipe.id %}">Edit</a>
+    
+    <form action="{% url 'delete_recipe' recipe.id %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
 {% endif %}
 
-<h2>Description</h2>
-<p>{{ recipe.description }}</p>
-
-<h2>Ingredients</h2>
-<p>{{ recipe.ingredients }}</p>
-
-<h2>Instructions</h2>
-<p>{{ recipe.instructions }}</p>
+</div>
 
 {% endblock %}

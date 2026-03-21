@@ -31,19 +31,14 @@
 
 <!-- Navigation Bar -->
     <nav class="navbar">
-
-        <!-- Hamburger Menu  -->
-        <a href="Javascript:void(0);" class="menu" onclick="toggleMenu()">
-            <i class="fi fi-rr-menu-burger"></i>
-        </a>
-
+        
+        <!--Logo-->
         <a href="{% url 'Home' %}" class="logo">
             <i class="fi fi-ss-hat-chef"></i>
              Kitchen Chronicles
         </a>
+
         <ul class="nav-links">
-            <li><a href="{% url 'Home' %}">Home</a></li>
-            
             <!--Daily Recipes Dropdown button-->
             <li class="dropdown">
                 <button class="dropbtn">
@@ -52,7 +47,6 @@
                     </a>
                 </button>
                 <ul class="dropdown-content">
-                    <li><a href="{% url 'category_recipes' 'All Recipes' %}">All Recipes</a></li>
                     <li><a href="{% url 'category_recipes' 'Breakfast' %}">Breakfast</a></li>
                     <li><a href="{% url 'category_recipes' 'Lunch' %}">Lunch</a></li>
                     <li><a href="{% url 'category_recipes' 'Dinner' %}">Dinner</a></li>
@@ -96,10 +90,12 @@
 
         <!-- Search Bar -->
         <div class="search-container">
-            <input type="text" placeholder="Search recipes...">
-            <button type="submit">
-                <i class="fi fi-rr-search"></i>
-            </button>
+            <form method="GET" action="{% url 'search_recipes' %}">
+                <input type="text" name="q" placeholder="Search recipes...">
+                <button type="submit">
+                    <i class="fi fi-rr-search"></i>
+                </button>
+            </form>
         </div>
 
     </nav>
