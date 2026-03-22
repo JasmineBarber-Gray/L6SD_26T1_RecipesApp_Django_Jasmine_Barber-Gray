@@ -203,14 +203,91 @@ body {
 /* login, signup & Recipe submission page styling */
 /*both login and signup are under auth so both use the same container css*/
 .auth-container {
-    max-width: 400px;
-    margin: 2rem auto;
+    max-width: 600px;
+    margin: 3rem auto;
     padding: 2rem;
     background-color: #7b6335;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
 
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.auth-link a {
+  color: #372a0a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  color: #ff6347;
+}
+
+/* Submit form styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #372a0a;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-container button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background-color: #635333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-container button:hover {
+  background-color: #4e4126;
+}
+
+.submit-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #635333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #4e4126;
 }
 
 /*Footer*/
@@ -309,7 +386,7 @@ body {
 }
 
 .recipe-card {
-  background-color: #d9ccc1;
+  background-color: #e8dbd0;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -358,8 +435,6 @@ body {
 .view-btn:hover {
   background-color: #4e4126;
 }
-
-
 
 /* Recipe Detail Page */
 .recipe-detail-container {
@@ -410,6 +485,7 @@ body {
     line-height: 1.6;
     color: #4a3c2a;
 }
+
 
 /* Buttons */
 .recipe-buttons {

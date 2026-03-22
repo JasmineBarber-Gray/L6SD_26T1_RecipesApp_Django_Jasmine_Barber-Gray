@@ -30,6 +30,7 @@ def recipe_detail(request, id):
         "recipe": recipe
     })
 
+# Submit recipe view
 @login_required   
 def submit_recipe(request):
     if request.method == 'POST':
