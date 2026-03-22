@@ -19,7 +19,14 @@
             {{ form.password }}
         </div>
 
-        <button type="submit">Login</button>
+        {% if form.errors %}
+        <div class="form-errors">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+        
+        <button type="submit" class="submit-button">Login</button>
+        
     </form>
     
     <p class="auth-link">

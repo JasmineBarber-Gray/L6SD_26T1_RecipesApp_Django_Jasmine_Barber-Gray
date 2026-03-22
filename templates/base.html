@@ -24,11 +24,7 @@
     {% else %}
     <a href="{% url 'Login' %}">Login</a> |
     <a href="{% url 'Signup' %}">Signup</a> |
-    {% endif %}
-    
-    {% if user %}
-    <a href="{% url 'Login'%}">Submit a Recipe</a> 
-    
+    <a href="{% url 'Login' %}">Submit a Recipe  </a>
     {% endif %}
 
 </div>

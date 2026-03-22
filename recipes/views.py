@@ -49,7 +49,7 @@ def submit_recipe(request):
 def edit_recipe(request, id):
     recipe = get_object_or_404(Recipe, id=id)
     
-    if recipe.author != request.user:
+    if recipe.author != request.user and not request.user.is_superuser:
         return HttpResponseForbidden("You cannot edit this recipe.")
 
     if request.method == 'POST':
@@ -74,7 +74,7 @@ def edit_recipe(request, id):
 def delete_recipe(request, id):
     recipe = get_object_or_404(Recipe, id=id)
 
-    if recipe.author != request.user:
+    if recipe.author != request.user and not request.user.is_superuser:
         return HttpResponseForbidden("You cannot delete this recipe.")
 
     if request.method == 'POST':

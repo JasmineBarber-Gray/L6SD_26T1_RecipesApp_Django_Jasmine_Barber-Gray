@@ -127,13 +127,14 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+PASSWORD_RESET_TIMEOUT = 3600
 
 LOGIN_URL = 'Login'
 
 # Redirect users after login
-LOGIN_REDIRECT_URL = 'Home'  # Use the name of your home URL
+LOGIN_REDIRECT_URL = 'Home'
 
 # Redirect users after logout
 LOGOUT_REDIRECT_URL = 'Home'
