@@ -35,10 +35,10 @@ python manage.py createsuperuser
 python manage.py runserver
 
 # Packages and dependencies
-
 - pip
 - Django
 - Pillow (for image uploads)
+- Python
 
 # how to navigate to admin panel
 

@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.home_view, name='Home'),
     path('Recipes/', views.recipes_view, name='Recipes'),
     path('category/<str:category>/', views.category_recipes, name='category_recipes'),
+    path('sub_category/<str:sub_category>/', views.sub_category_recipes, name='sub_category_recipes'),
     path('recipe/<int:id>/', views.recipe_detail, name='recipe_detail'),
     path('submit/', views.submit_recipe, name='submit_recipe'),
     path('recipe/<int:id>/edit/', views.edit_recipe, name='edit_recipe'),

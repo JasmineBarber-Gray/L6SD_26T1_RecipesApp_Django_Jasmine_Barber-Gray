@@ -12,8 +12,15 @@ class Recipe(models.Model):
         ('Lunch', 'lunch'),
         ('Dinner', 'dinner'),
         ('Dessert', 'dessert'),
+    ]
+    
+    SUB_CATEGORY_CHOICES = [
         ('Keto', 'keto'),
         ('Vegan', 'vegan'),
+        ('Vegetarian', 'vegetarian'),
+        ('Protein', 'protein'),
+        ('Calorie Deficit', 'calorie deficit'),
+        ('Gluten-Free', 'gluten-free'),
         ('Valentine\'s Day', 'valentine\'s Day'),
         ('Easter', 'easter'),
         ('Halloween', 'halloween'),
@@ -26,6 +33,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    sub_category = models.CharField(max_length=20, choices=SUB_CATEGORY_CHOICES, blank=True, null=True)
     image = models.ImageField(upload_to='recipes/images', blank=True, null=True)
     description = models.TextField()
     ingredients = models.TextField()

@@ -23,6 +23,14 @@ def category_recipes(request, category):
         "category": category
     })
 
+# Sub-category page
+def sub_category_recipes(request, sub_category):
+    recipes = Recipe.objects.filter(sub_category=sub_category)
+    return render(request, "recipes/sub_category.html", {
+        "recipes": recipes,
+        "category": sub_category
+    })
+
 # Recipe detail page
 def recipe_detail(request, id):
     recipe = get_object_or_404(Recipe, id=id)
@@ -93,7 +101,8 @@ def search_recipes(request):
             Q(title__icontains=query) |
             Q(description__icontains=query) |
             Q(ingredients__icontains=query) |
-            Q(category__icontains=query)
+            Q(category__icontains=query) |
+            Q(sub_category__icontains=query)
         )
 
     return render(request, 'recipes/search_results.html', {
