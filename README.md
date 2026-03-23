@@ -33,7 +33,10 @@ superuser: Jasmine
 superuserpassword: Password01
 
 TestUser: Monica
-TestUserPassword: DaBomb26
+TestUserPassword: Epicfun26
+
+Testuser#2: Nora
+Testuser#2password: TitanFruit09
 
 
 

@@ -18,7 +18,15 @@
 
     <div class="recipe-section">
         <h2>Ingredients</h2>
-        <p>{{ recipe.ingredients | linebreaks }}</p>
+
+        <ul class="ingredients-list">
+        {% for item in recipe.ingredients.splitlines %}
+            {% if item %}
+                <li>{{ item }}</li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        
     </div>
 
     <div class="recipe-section">

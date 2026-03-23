@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <div class="home-content">
     <h2>Chef's Special</h2>
+    <h3>Gordon Ramsey - Quick and Easy</h3>
 
-    <iframe width="560" height="315" src=""></iframe>
+    <video class="cooking-video" autoplay muted loop controls>
+        <source src="{% static 'recipes/videos/Cooking_video2.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <h2>Community Feedback</h2>
+    
+    <div class="feedback-container">
+        <div class="feedback"><p>"Very easy cooking instructions." - Monica</p></div>
+        <div class="feedback"><p>"Amazing recipes!" - Nora</p></div>
+        <div class="feedback"><p>"My family loved the dinner recipes." - Conrad</p></div>
+    </div>
 
-    <div><p>"Amazing recipes!"</p></div>
-    <div><p>"Very easy cooking instructions."</p></div>
-    <div><p>"My family loved the dinner recipes."</p></div>
+
 </div>
 
 {% endblock %}
